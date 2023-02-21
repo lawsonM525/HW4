@@ -1,2 +1,3 @@
 // Pseudocode for Binary Search
 
+input: 
