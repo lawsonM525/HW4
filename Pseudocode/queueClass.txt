@@ -1,0 +1,51 @@
+Class variables:
+    maxSize = n
+    queue = char[]
+    front = -1
+    rear = -1
+Functions:
+- isFull
+// shows whether or not queue is full
+input: queue
+output: boolean
+method:
+return rear == maxSize - 1
+// returns true if the index for rear is the last index of the array
+
+- isEmpty
+// shows whether or not queue is empty
+input: queue
+output: boolean
+method:
+return front == -1 
+// returns true if the index for front is -1 indicating there is no char in the 0th index
+
+- enqueue
+// adds an element to the queue
+input: char
+no output
+method: enqueue(element):
+if isFull():
+    print("Queue is full")
+else:
+    if front == -1:
+        front = 0 // adds one index to front to show element has been added
+    rear = (rear + 1) % maxSize // increment rear by one, modulus allows us to wrap around the array if needed
+    queue[rear] = element
+
+- dequeue
+// removes element from the queue
+no input
+output: char
+method: dequeue():
+if isEmpty():
+    print("Queue is empty")
+    return None
+else:
+    element = queue[front]
+    if front == rear: // ie if there was only one element
+        front = -1 // reset front index
+        rear = -1 // reset rear index
+    else:
+        front = (front + 1) % maxSize // increment front byy one, modulus allows us to wrap around the array if needed
+    return element

@@ -1,0 +1,15 @@
+// Pseudocode for Binary Search
+
+input: int[] array, int element, start, end
+pre-condition: array is sorted 
+output: boolean
+
+method: 
+If start > end ( return false )
+mid = (start + end) / 2 //no decimal division
+
+If array[mid] == element, return true
+If array[mid] > element (
+     return binarySearch(array, element, start, mid - 1))
+If array[mid] < element (
+     return binarySearch(array, element, mid + 1, end))
