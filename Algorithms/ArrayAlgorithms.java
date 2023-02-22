@@ -3,23 +3,6 @@ package Algorithms;
 // TODO: Move helper functions to Helpers.java
 
 public class ArrayAlgorithms {
-    //Helper functions
-    /**
-     * concatenates two arrays
-     * @param array1 first array
-     * @param array2 second array
-     * @return array with elements of array1 and array2
-     */
-    public static int[] concatArray(int[] array1, int[] array2){
-        int[] array = new int[array1.length + array2.length];
-        for(int i=0; i<array1.length; i++){ //loops through array1 and adds each element to array
-            array[i] = array1[i];
-        }
-        for(int i=0; i<array2.length; i++){ //loops through array2 and adds each element to array
-            array[i+array1.length] = array2[i];
-        }
-        return array;
-    }
 
     //Algorithm functions
 
@@ -258,6 +241,27 @@ public class ArrayAlgorithms {
      */
     public static int[] reverseRec(int[] array){ // same name so that we can call it the same way as reverse (overloading)
         return reverseRec(array, 0, array.length-1);
+    }
+
+    /**
+     * searches if an element is in an array
+     * @param array array to be searched
+     * @param element element to be found
+     * @return T/F
+     */
+    public static boolean binarySearch(int[] array, int element, int start, int end) {
+        if (start > end) {
+            return false;
+        }
+        
+        int mid = (start + end) / 2;
+        if (array[mid] == element) {
+            return true;
+        } else if (array[mid] > element) {
+            return binarySearch(array, element, start, mid - 1);
+        } else {
+            return binarySearch(array, element, mid + 1, end);
+        }
     }
 
 }

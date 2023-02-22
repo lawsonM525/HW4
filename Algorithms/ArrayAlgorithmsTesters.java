@@ -1,20 +1,6 @@
 package Algorithms;
 public class ArrayAlgorithmsTesters {
-    //Helper functions
-    /**
-     * prints an array
-     * @param array array to be printed
-     */
-    public static void printArray(int[] array){
-        System.out.print("[");
-        for(int i=0; i<array.length; i++){
-            System.out.print(array[i]);
-            if(i != array.length-1){
-                System.out.print(", ");
-            }
-        }
-        System.out.println("]");
-    }
+
 
     // Testers for ArrayAlgorithm.java
 
@@ -25,7 +11,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test addAll() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Sum of array: " + ArrayAlgorithms.addAll(array));
     }
 
@@ -36,7 +22,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test addAllRec() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Sum of array: " + ArrayAlgorithms.addAllRec(array));
     }
 
@@ -47,7 +33,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test multiplyAll() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Product of array: " + ArrayAlgorithms.multiplyAll(array));
     }
 
@@ -58,7 +44,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test multiplyAllRec() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Product of array: " + ArrayAlgorithms.multiplyAllRec(array));
     }
 
@@ -69,7 +55,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test isElement() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Is 3 in array? " + ArrayAlgorithms.isElement(array, 3));
         System.out.println("Is 6 in array? " + ArrayAlgorithms.isElement(array, 6));
     }
@@ -81,7 +67,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test isElementRec() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Is 3 in array? " + ArrayAlgorithms.isElementRec(array, 3));
         System.out.println("Is 6 in array? " + ArrayAlgorithms.isElementRec(array, 6));
     }
@@ -93,7 +79,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test findMax() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Max of array: " + ArrayAlgorithms.findMax(array));
     }
 
@@ -104,7 +90,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test findMaxRec() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Max of array: " + ArrayAlgorithms.findMaxRec(array));
     }
 
@@ -115,7 +101,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test findMin() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Min of array: " + ArrayAlgorithms.findMin(array));
     }
 
@@ -126,7 +112,7 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test findMinRec() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Min of array: " + ArrayAlgorithms.findMinRec(array));
     }
 
@@ -138,9 +124,9 @@ public class ArrayAlgorithmsTesters {
         System.out.println(" ==== Test reverse() ====");
         System.out.println("Array: ");
             
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Reversed array: ");
-        printArray(ArrayAlgorithms.reverse(array));
+        Helpers.printArray(ArrayAlgorithms.reverse(array));
     }
 
     /**
@@ -150,9 +136,21 @@ public class ArrayAlgorithmsTesters {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(" ==== Test reverseRec() ====");
         System.out.println("Array: ");
-        printArray(array);
+        Helpers.printArray(array);
         System.out.println("Reversed array: ");
-        printArray(ArrayAlgorithms.reverseRec(array));
+        Helpers.printArray(ArrayAlgorithms.reverseRec(array));
+    }
+
+    /**
+     * Tests binarySearch method
+     */
+    public static void testBinarySearch() {
+        int[] array = {1, 2, 3, 4, 5};
+        System.out.println("==== Test binarySearch() ====");
+        System.out.println("Array: ");
+        Helpers.printArray(array);
+        System.out.println("Index of 3: " + ArrayAlgorithms.binarySearch(array, 3, 0, array.length-1));
+        System.out.println("Index of 6: " + ArrayAlgorithms.binarySearch(array, 6, 0, array.length-1));
     }
 
     // Main method
@@ -169,5 +167,6 @@ public class ArrayAlgorithmsTesters {
         testFindMinRec();
         testReverse();
         testReverseRec();
+        testBinarySearch();
     }
 }
