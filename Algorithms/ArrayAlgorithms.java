@@ -1,3 +1,7 @@
+package Algorithms;
+// TODO: Add Binary Search algorithm in here
+// TODO: Move helper functions to Helpers.java
+
 public class ArrayAlgorithms {
     //Helper functions
     /**
@@ -16,6 +20,8 @@ public class ArrayAlgorithms {
         }
         return array;
     }
+
+    //Algorithm functions
 
     /**
      * adds all elements within an array iteratively
