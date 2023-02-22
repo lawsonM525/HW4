@@ -1,3 +1,40 @@
 // Pseudocode for Binary Search
 
-input: 
+input: int[] array, int element, start, end
+pre-condition: array is sorted 
+output: boolean
+
+method: 
+If start > end ( return false )
+mid = (start + end) / 2 //no decimal division
+
+If array[mid] == element, return true
+If array[mid] > element (
+     return binarySearch(array, element, start, mid - 1))
+If array[mid] < element (
+     return binarySearch(array, element, mid + 1, end))
+
+
+// Pseudocode for parantheses matching
+
+input: char[] s
+output: boolean
+
+method:
+new charStack(stack, s.length) 
+loop from i = 0 to s.length {
+    if s[i] is in openBrackets:
+        stack.push(s[i])
+    if s[i] is in closeBrackets:
+        last = stack.pop()
+        if last is in closeBrackets or findIndex(openBrackets, last) != findIndex(closeBrackets, s[i]):
+
+    c. If the stack is empty, return false
+    }
+3. If the stack is empty, return true
+
+
+
+
+//  Pseudocode for Queue class and functions
+
