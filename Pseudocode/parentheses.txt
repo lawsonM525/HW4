@@ -6,10 +6,10 @@ output: boolean
 method:
 new charStack(stack, s.length) 
 loop from i = 0 to s.length {
-    if s[i] is in openBrackets:
-        stack.push(s[i])
-    if s[i] is in closeBrackets:
+    if s[i] is in openBrackets: //openBrackets is array containing list of open brackets
+        stack.push(s[i]) 
         last = stack.pop()
+        //closeBrackets is array containing list of closed brackets
         if last is in closeBrackets or findIndex(openBrackets, last) != findIndex(closeBrackets, s[i]):
             return false
 }
