@@ -6,9 +6,9 @@ output: boolean
 
 method: 
 If start > end ( return false )
-mid = (start + end) / 2 //no decimal division
-
+mid = (start + end) / 2 // no decimal division
 If array[mid] == element, return true
+
 If array[mid] > element (
      return binarySearch(array, element, start, mid - 1))
 If array[mid] < element (
